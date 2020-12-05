@@ -27,3 +27,12 @@ def post(request, sno):
         'post': Post.objects.filter(sno=sno).first()
     }
     return render(request, "post.html", context)
+
+def search(request):
+    category = request.GET.get("category")
+    context = {
+        'posts': Post.objects.filter(post_category=category),
+        'length': len(Post.objects.filter(post_category=category)),
+        'category': category
+    }
+    return render(request, "search.html", context)

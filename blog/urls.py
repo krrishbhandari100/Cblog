@@ -6,5 +6,6 @@ urlpatterns = [
     path('about/', views.about),
     path('contact/', views.contact),
     path('post/<str:sno>', views.post),
+    path('search/', views.search),
 
 ]

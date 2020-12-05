@@ -48,7 +48,7 @@
           
           <li class="nav-item">
             <form class="form-inline" method="GET" action="/search" style="margin-top: -5px; margin-right: -86px;">
-              <input class="form-control mr-sm-2" name="category" type="search" placeholder="type name of category">
+              <input class="form-control mr-sm-2" type="search" placeholder="type name of category" aria-label="Search">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form> 
           </li>
@@ -71,13 +71,12 @@
       </div>
     </div>
   </header>
-<div class="category" style="display: flex;">
-  <marquee>Please first read about page and be the part of out community</marquee>
-</div>
+
   <!-- Main Content -->
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
+          <center><h3>Found {{length}} posts for category - {{category}}</h3></center>
         {% for i in posts %}
         <div class="post-preview">
           <a href="/post/{{i.sno}}">
